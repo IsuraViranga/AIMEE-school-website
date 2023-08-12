@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>registration</title>
+        <style>
+            body {
+                 margin: 0;
+                }
+
+            ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            width: 25%;
+            background-color: #f1f1f1;
+            position: fixed;
+            height: 100%;
+            overflow: auto;
+            }
+
+            li a {
+            display: block;
+            color: #000;
+            padding: 8px 16px;
+            text-decoration: none;
+            }
+
+            li a.active {
+            background-color: #04AA6D;
+            color: white;
+            }
+
+            li a:hover:not(.active) {
+            background-color: #555;
+            color: white;
+            }
+            
+
+            #main_div1{
+                width: 72%;
+                position: relative;
+            }
+
+
+
+
+
+
+
+
+
+
+
+            #form_div{
+                border-radius: 10px;
+                width: 530px;
+                position: absolute;
+                top: 40px;
+                left: 180px;
+                background-color: #04AA6D;
+            }
+            form{
+               border-radius: 5px;
+                width: 530px;
+            }
+            td{
+                padding: 5px;
+            }
+            h1{
+                text-align: center;
+            }
+            table{
+                width: 525px;
+            }
+            #Formid{
+                background-color: #004129;
+                color: white;
+            }
+            span{
+                color: red;
+            }
+            #sub_dec{
+                margin-left: 120px;
+                background-color: #000;
+                color: white;
+                padding: 10px;
+                font-weight: bold;
+            }
+            #sub_dec:hover{
+                background-color: #0f6244;
+                color: white;
+            }
+
+
+
+
+
+            #footer_div
+            {
+                width: 101.8%;
+                height: 300px;
+                background-color: #054b31;
+                position: relative;
+                top: 750px;
+            }
+            #foot1{
+                position: absolute;
+                left: 30px;
+                top: 30px;
+            }
+            #foot2{
+                position: absolute;
+                left: 30px;
+                top: 150px;
+            }
+            #foot3{
+                position: absolute;
+                right: 30px;
+                top: 30px;
+            }
+            .p1{
+                color: white;
+                font-size: 17px;
+                font-weight: bold;
+            }
+            .p2{
+                color: white;
+                font-size: 14px;
+                font-weight: bold;
+            }
+        </style>
+        <script>
+            function check_uid(receive_uid)
+            {
+               document.getElementById("err_name").innerHTML="";
+               if(receive_uid=="")
+               {
+                 document.getElementById("err_name").innerHTML="Required and must be on length 5 to 12";
+                 return false;
+               }
+               else if((receive_uid.length<5) || (receive_uid.length>12))
+               {
+                document.getElementById("err_name").innerHTML="Required and must be on length 5 to 12";
+                 return false;
+               }
+            }
+            function check_pass(receive_pass)
+            {
+                document.getElementById("err_pass").innerHTML="";
+                if(receive_pass=="")
+               {
+                 document.getElementById("err_pass").innerHTML="Required and must be on length 7 to 12";
+                 return false;
+               }
+               else if((receive_pass.length<7) || (receive_pass.length>12))
+               {
+                document.getElementById("err_pass").innerHTML="Required and must be on length 7 to 12";
+                 return false;
+                 
+               }
+            }
+            function check_name(receive_name)
+            {
+                document.getElementById("err_full").innerHTML="";
+                if(/^[a-zA-Z]+$/.test(receive_name)==false)
+                {
+                    document.getElementById("err_full").innerHTML="Required and Alphabates only";
+                    return false;
+                }
+            }
+            function check_address(receive_address)
+            {
+                document.getElementById("err_address").innerHTML="";
+                if(receive_address=="")
+                {
+                    document.getElementById("err_address").innerHTML="optional";
+                    return false;
+                }
+            }
+            function check_country(receive_country)
+            {
+                document.getElementById("err_country").innerHTML="";
+                if(receive_country=="default")
+                {
+                    document.getElementById("err_country").innerHTML="Required and must select a country";
+                    return false;
+                }
+            }
+            function check_zip(receive_zip)
+            {
+                document.getElementById("err_zip").innerHTML="";
+                if(receive_zip=="")
+                {
+                    document.getElementById("err_zip").innerHTML="optional";
+                    return false;
+                }
+            }
+            function check_email(receive_email)
+            {
+                document.getElementById("err_email").innerHTML="";
+                var reg =/^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+                if(reg.test(receive_email)==false)
+                {
+                    document.getElementById("err_email").innerHTML="Required and must be a valid email";
+                    return false;
+                }
+            }
+            function check_sex(receive_sex)
+            {
+                document.getElementById("err_sex").innerHTML="";
+                if(receive_sex=="")
+                {
+                    document.getElementById("err_sex").innerHTML="Required";
+                    return false;
+                }
+            }
+            function check_language()
+            {
+                document.getElementById("err_language").innerHTML="";
+                var a = document.getElementById("check_eng").checked;
+                var b = document.getElementById("check_non").checked;
+    
+                if(a==false && b==false)
+                {
+                    document.getElementById("err_language").innerHTML="Required";
+                    return false;
+                }
+            }
+            function check_about(receive_about)
+            {
+                document.getElementById("err_about").innerHTML="";
+                if(receive_about=="")
+                {
+                    document.getElementById("err_about").innerHTML="optional";
+                    return false;
+                }
+            }
+    
+            function validateForm(frame)
+            {
+                var get_uid = frame.user_id.value;
+                var get_pass =frame.pass.value;
+                var get_name =frame.f_name.value;
+                var get_address =frame.address.value;
+                var get_country=frame.country.value;
+                var get_zip=frame.zip.value;
+                var get_email=frame.email.value;
+                var get_sex=frame.sex.value;
+                var get_check_eng=frame.check_eng.value;
+                var get_about = frame.about.value;
+                
+                var see_uid=true;
+                var see_pass=true;
+                var see_name=true;
+                var see_address=true;
+                var see_country=true;
+                var see_zip=true;
+                var see_email=true;
+                var see_sex=true;
+                var see_language=true;
+                var see_about=true;
+                                                    
+                if(check_uid(get_uid)==false)
+                {
+                    see_uid=false;
+                }
+                if(check_pass(get_pass)==false)
+                {
+                    see_pass=false;
+                }
+                if(check_name(get_name)==false)
+                {
+                    see_name=false;
+                }
+                if(check_address(get_address)==false)
+                {
+                    see_address=false;
+                }
+                if(check_country(get_country)==false)
+                {
+                    see_country=false;
+                }
+                if(check_zip(get_zip)==false)
+                {
+                    see_zip=false;
+                }
+                if(check_email(get_email)==false)
+                {
+                    see_email=false;
+                }
+                if(check_sex(get_sex)==false)
+                {
+                    see_sex=false;
+                }
+                if(check_language()==false)
+                {
+                    see_language=false;
+                }
+                if(check_about(get_about)==false)
+                {
+                    see_about=false;
+                }
+                if(see_uid==true && see_pass==true && see_name==true && see_address==true &&  see_country==true && see_zip==true && see_email==true && see_sex==true &&  see_language && see_about==true)
+                 {
+                    window.alert("Data send succesfully");
+                    return true;
+                 }
+                 else{
+                    return false;
+                 }
+            }
+        </script>
+    </head>
+    <body>    
+        <ul>
+            <li><a href="Home.html">Home</a></li>
+            <li><a class="active" href="Registration_form.html">Registration Form</a></li>
+            <li><a href="login.html">Login Form</a></li>
+            <li><a href="Aboutme.html">About Me</a></li>
+            <li><a href="contactme.html">Contact Me</a></li>
+            <li><a href="#logout">Log Out</a></li>
+        </ul>
+        <div style="margin-left:25%;padding:1px 16px;height:1050px;background-image: url('re.png');" id="main_div1" >
+
+            <div id="form_div">
+                <h1>Registration Form</h1>
+                <form id="Formid" name="frame" onsubmit="return validateForm(this)">
+                    <table >
+                        <tr>
+                            <td><label>User Id</label></td>
+                            <td>
+                                <input type="text" name="user_id">
+                                <span id="err_name"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label>Password</label></td>
+                            <td>
+                                <input type="password" name="pass">
+                                <span id="err_pass"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label>Name</label></td>
+                            <td>
+                                <input type="text" size="40" name="f_name"><br>
+                                <span id="err_full"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label>Address</label></td>
+                            <td>
+                                <input type="text" size="40" name="address">
+                                <span id="err_address"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label>Country</label></td>
+                            <td>
+                                <select name="country">
+                                    <option value="default">Select country</option>
+                                    <option value="SriLanka">SriLanka</option>
+                                    <option value="India">India</option>
+                                    <option value="Pakistan">Pakistan</option>
+                                </select>
+                                <span id="err_country"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label>Zip<br>Code</label></td>
+                            <td>
+                                <input type="text" name="zip">
+                                <span id="err_zip"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label>Email</label></td>
+                            <td>
+                                <input type="text" name="email">
+                                <span id="err_email"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label>Sex</label></td>
+                            <td>
+                                <input type="radio" name="sex" value="Male"/>Male
+                                <input type="radio" name="sex" value="Female"/>Female
+                                <span id="err_sex"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label>Language</label></td>
+                            <td>
+                                <input type="checkbox" id="check_eng" value="English">English
+                                <input type="checkbox" id="check_non" value="Non English">Non English
+                                <span id="err_language"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label>About</label></td>
+                            <td>
+                                <textarea cols="25" rows="5" name="about"></textarea>
+                                <span id="err_about"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>
+                                 <input type="submit" value="submit" id="sub_dec">
+                            </td>
+                        </tr>
+                    </table>
+        
+                </form>
+            </div>
+            <footer>
+                <div id="footer_div">
+                       <div id="foot1">
+                            <img src="ama.png">
+                       </div>
+                       <div id="foot2">
+                            <p class="p1">
+                                 AIMEE INTERNATIONAL SCHOOL
+                            </p>
+                            <p class="p2">
+                                AIMEE INTERNATIONAL,<br>
+                                46/26, NAVAM MAWATHA,<br>
+                                COLOMBO 02, 00200,<br>
+                                SRI LANKA
+                            </p>
+                       </div>
+                       <div id="foot3">
+                             <p class="p2">
+                                    OPERATING HOURS<br><br>
+            
+                                    MON - SAT - 8AM TO 6PM<br>
+                                    SUN - 8AM TO 2PM<br><br>
+            
+                                    TELEPHONE : +94 11 234 5700<br>
+                                    AIMEE INTERNATIONAL : +94 11 470 9400<br><br>
+            
+                                    WHATSAPP : +94 11 470 9400<br><br>
+            
+                                    TELEPHONE (US) : +1-860-316-3828 (FOR US RESIDENTS)<br><br>
+            
+                                    EMAIL : AIMEE INTERNATIONAL@JAIME.COM
+                             </p>
+                       </div>
+                </div>
+              </footer>
+
+
+        </div>
+    </body>
+</html>

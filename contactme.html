@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>contact me</title>
+        <style>
+             body {
+                 margin: 0;
+                }
+
+            ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            width: 25%;
+            background-color: #f1f1f1;
+            position: fixed;
+            height: 100%;
+            overflow: auto;
+            }
+
+            li a {
+            display: block;
+            color: #000;
+            padding: 8px 16px;
+            text-decoration: none;
+            }
+
+            li a.active {
+            background-color: #04AA6D;
+            color: white;
+            }
+
+            li a:hover:not(.active) {
+            background-color: #555;
+            color: white;
+            }
+
+
+
+            #main_div3{
+                width: 74.7%;
+                
+            }
+            #inside_mdiv{
+                width: 100%;
+                height: 500px;
+                background-color: #1c6f09;
+                position: relative;
+            }
+            #boy_img{
+                position: absolute;
+                bottom: 0;
+                right: 10px;
+            }
+            #t_contact{
+                position: absolute;
+                left:40px;
+            }
+            h1{
+                font-size: 50px;
+                color: white;
+            }
+            #last_sub{
+                background-color: white;
+                color: #1c6f09;
+                padding: 15px;
+                font-weight: bold;
+                border-radius: 5px;
+                border: 0;
+            }
+            #last_sub:hover{
+                background-color: black;
+                color: white;
+            }
+
+
+
+
+            #footer_div
+            {
+                width: 100%;
+                height: 300px;
+                background-color: #054b31;
+                position: relative;
+                top:45px ;
+            }
+            #foot1{
+                position: absolute;
+                left: 30px;
+                top: 30px;
+            }
+            #foot2{
+                position: absolute;
+                left: 30px;
+                top: 150px;
+            }
+            #foot3{
+                position: absolute;
+                right: 30px;
+                top: 30px;
+            }
+            .p1{
+                color: white;
+                font-size: 17px;
+                font-weight: bold;
+            }
+            .p2{
+                color: white;
+                font-size: 14px;
+                font-weight: bold;
+            }
+
+        </style>
+    </head>
+    <body>
+        <ul>
+            <li><a href="Home.html">Home</a></li>
+            <li><a  href="Registration_form.html">Registration Form</a></li>
+            <li><a href="login.html">Login Form</a></li>
+            <li><a href="Aboutme.html">About Me</a></li>
+            <li><a class="active" href="contactme.html">Contact Me</a></li>
+            <li><a href="#logout">Log Out</a></li>
+        </ul>
+        <div style="margin-left:25%;height:855px;" id="main_div3">
+            <div id="inside_mdiv">
+              <img src="boy.png" id="boy_img">
+              <table id="t_contact">
+                <tr>
+                    <td>
+                        <h1>Contact Us</h1><br><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text" size="60" placeholder="Name"><br><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text" size="60" placeholder="Enter a valid email address"><br><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" value="I accept the Terms of services">I accept the Terms of services<br><br><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text" size="60"  placeholder="enter any other info here" >
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <br><br><input type="button" value="Submit" id="last_sub">
+                    </td>
+                </tr>
+              </table>
+            </div>
+            <footer>
+                <div id="footer_div">
+                       <div id="foot1">
+                            <img src="ama.png">
+                       </div>
+                       <div id="foot2">
+                            <p class="p1">
+                                 AIMEE INTERNATIONAL SCHOOL
+                            </p>
+                            <p class="p2">
+                                AIMEE INTERNATIONAL,<br>
+                                46/26, NAVAM MAWATHA,<br>
+                                COLOMBO 02, 00200,<br>
+                                SRI LANKA
+                            </p>
+                       </div>
+                       <div id="foot3">
+                             <p class="p2">
+                                    OPERATING HOURS<br><br>
+            
+                                    MON - SAT - 8AM TO 6PM<br>
+                                    SUN - 8AM TO 2PM<br><br>
+            
+                                    TELEPHONE : +94 11 234 5700<br>
+                                    AIMEE INTERNATIONAL : +94 11 470 9400<br><br>
+            
+                                    WHATSAPP : +94 11 470 9400<br><br>
+            
+                                    TELEPHONE (US) : +1-860-316-3828 (FOR US RESIDENTS)<br><br>
+            
+                                    EMAIL : AIMEE INTERNATIONAL@JAIME.COM
+                             </p>
+                       </div>
+                </div>
+              </footer>
+        </div>
+    </body>
+</html>

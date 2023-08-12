@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>login</title>
+        <style>
+            body {
+                 margin: 0;
+                }
+
+            ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            width: 25%;
+            background-color: #f1f1f1;
+            position: fixed;
+            height: 100%;
+            overflow: auto;
+            }
+
+            li a {
+            display: block;
+            color: #000;
+            padding: 8px 16px;
+            text-decoration: none;
+            }
+
+            li a.active {
+            background-color: #04AA6D;
+            color: white;
+            }
+
+            li a:hover:not(.active) {
+            background-color: #555;
+            color: white;
+            }
+
+
+            tr{
+                height: 50px;
+            }
+            td{
+                padding: 10px;
+                color: white;
+                background-color: #000;
+                border-radius: 5px;
+                border: 5px solid black;
+            }
+            #background{
+                width: 98%;
+                height: 100%;
+                position: absolute;
+            }
+            #main_div{
+               position: relative;
+               height: 100%;
+               border-left: 2px solid rgb(9, 57, 9);
+            }
+            table{
+                position: relative;
+                margin-left: 32%;
+                margin-top: 20%;
+                border-radius: 5px;
+            }
+            #login_d{
+                background-color: #034b2f;
+                color: white;
+                font-size: 17px;
+                border-radius: 6px;
+                padding: 5px;
+            }
+            #reset_d{
+                background-color: #034b2f;
+                color: white;
+                font-size: 17px;
+                border-radius: 6px;
+                padding: 5px;
+            }
+            #login_d:hover{
+                background-color: #000;
+            }
+            #reset_d:hover{
+                background-color: #000;
+            }
+            #capt:hover{
+                background-color: #034b2f;
+            }
+            .tit:hover{
+                background-color: #034b2f;
+            }
+
+
+
+
+            #footer_div
+            {
+                width: 101.4%;
+                height: 300px;
+                background-color: #054b31;
+                position: relative;
+                top: 150px;
+            }
+            #foot1{
+                position: absolute;
+                left: 30px;
+                top: 30px;
+            }
+            #foot2{
+                position: absolute;
+                left: 30px;
+                top: 150px;
+            }
+            #foot3{
+                position: absolute;
+                right: 30px;
+                top: 30px;
+            }
+            .p1{
+                color: white;
+                font-size: 17px;
+                font-weight: bold;
+            }
+            .p2{
+                color: white;
+                font-size: 14px;
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+        <ul>
+            <li><a href="Home.html">Home</a></li>
+            <li><a  href="Registration_form.html">Registration Form</a></li>
+            <li><a class="active" href="login.html">Login Form</a></li>
+            <li><a href="Aboutme.html">About Me</a></li>
+            <li><a href="contactme.html">Contact Me</a></li>
+            <li><a href="#logout">Log Out</a></li>
+        </ul>
+        <div style="margin-left:25%;padding:1px 16px;height:900px;" id="main_div">
+            <img src="greenback.jpg" id="background">
+            <table >
+                <tr>
+                    <td colspan="2" style="text-align: center;" id="capt">Login In</td>
+                </tr>
+                <tr>
+                    <td style="width:100px;" class="tit">
+                        <label >User Type</label>
+                    </td>
+                    <td style="width: 150px;">
+                        <select id="one_select">
+                            <option value="Administrator">Administrator</option>
+                            <option value="student">student</option>
+                            <option value="teacher">teacher</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tit">
+                        <label >User Name</label>
+                    </td>
+                    <td>
+                        <input type="text">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tit">
+                        <label >Password</label>
+                    </td>
+                    <td>
+                        <input type="password">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="button" value="Login" style="text-align: right;" id="login_d">
+                    </td>
+                    <td>
+                        <input type="button" value="Reset" id="reset_d">
+                    </td>
+                </tr>
+            </table>
+            <footer>
+                <div id="footer_div">
+                       <div id="foot1">
+                            <img src="ama.png">
+                       </div>
+                       <div id="foot2">
+                            <p class="p1">
+                                 AIMEE INTERNATIONAL SCHOOL
+                            </p>
+                            <p class="p2">
+                                AIMEE INTERNATIONAL,<br>
+                                46/26, NAVAM MAWATHA,<br>
+                                COLOMBO 02, 00200,<br>
+                                SRI LANKA
+                            </p>
+                       </div>
+                       <div id="foot3">
+                             <p class="p2">
+                                    OPERATING HOURS<br><br>
+            
+                                    MON - SAT - 8AM TO 6PM<br>
+                                    SUN - 8AM TO 2PM<br><br>
+            
+                                    TELEPHONE : +94 11 234 5700<br>
+                                    AIMEE INTERNATIONAL : +94 11 470 9400<br><br>
+            
+                                    WHATSAPP : +94 11 470 9400<br><br>
+            
+                                    TELEPHONE (US) : +1-860-316-3828 (FOR US RESIDENTS)<br><br>
+            
+                                    EMAIL : AIMEE INTERNATIONAL@JAIME.COM
+                             </p>
+                       </div>
+                </div>
+              </footer>
+        </div>
+    </body>
+</html>
